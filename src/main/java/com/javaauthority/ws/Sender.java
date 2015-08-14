@@ -22,10 +22,9 @@ public class Sender {
 
     }
 
-    public static void executeGet(final String url) throws Exception {
+    public static String executeGet(final String url) throws Exception {
         get = new HttpGet(url);
         HttpResponse response = httpClient.execute(get);
-        String responseString = EntityUtils.toString(response.getEntity());
-        System.out.println(responseString);
+        return EntityUtils.toString(response.getEntity());
     }
 }
